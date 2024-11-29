@@ -8,8 +8,8 @@ import rightArrow from "../../assests/Icons/arrow-right.svg";
 const Result = () => {
     return (
         <>
-            <div className="relative">
-                <div className="h-[100vh] bg-[#303030]"></div>
+            <div className="relative bg-[#303030]">
+                <div className="h-[100vh] "></div>
 
                 <div className="absolute xl:top-[18%] top-[8%] flex justify-center items-center gap-6">
                     <img className="max-sm:hidden" src={marker} alt="marker" />
@@ -38,7 +38,7 @@ const Result = () => {
                     <img src={bgImage} alt="bgImage" className="" />
                 </div>
             </div>
-            <div className="flex sm:hidden bg-[#303030] justify-center items-center">
+            <div className="flex sm:hidden bg-[#303030] justify-center items-center pb-5">
                 <div className="flex justify-center items-center rounded-[6px] bg-[#D75555] px-[18px] py-[8px] text-[#fff] sm:mt-10">
                     Start private consultation
                     <img src={rightArrow} alt="right Arrow" />
