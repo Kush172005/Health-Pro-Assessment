@@ -6,7 +6,6 @@ export default function Slider() {
     return (
         <div className="w-full max-w-[375px] mx-auto sm:pt-8 bg-[#FCFAF5]">
             <div className="relative pt-8">
-                {/* Tooltip */}
                 <div
                     className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-[#F48265] ml-3 text-white rounded-lg px-3 py-1 text-lg font-bold"
                     style={{
@@ -16,9 +15,7 @@ export default function Slider() {
                     {value}
                 </div>
 
-                {/* Slider Track */}
                 <div className="relative h-2 bg-[#F3F4F6] rounded-full">
-                    {/* Active Track */}
                     <div
                         className="absolute h-full bg-[#F48265] rounded-full "
                         style={{
@@ -26,7 +23,6 @@ export default function Slider() {
                         }}
                     ></div>
 
-                    {/* Slider Handle */}
                     <div
                         className="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-[#F48265] rounded-full shadow-md z-[100]"
                         style={{
@@ -34,7 +30,6 @@ export default function Slider() {
                         }}
                     ></div>
 
-                    {/* Breakpoint Markers */}
                     <div className="absolute w-full flex justify-between px-1 top-1/2 -translate-y-1/2">
                         <div className="w-1 h-1 bg-[#D1D5DB] rounded-full"></div>
                         <div className="w-1 h-1 bg-[#D1D5DB] rounded-full"></div>
@@ -44,7 +39,6 @@ export default function Slider() {
                     </div>
                 </div>
 
-                {/* Hidden Range Input for Functionality */}
                 <input
                     type="range"
                     min={1}

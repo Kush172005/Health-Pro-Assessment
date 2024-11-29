@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 const RateCalculator = () => {
     const [selectedAge, setSelectedAge] = useState("");
     const [selectedConditions, setSelectedConditions] = useState([]);
+    const [icsiProcedure, setIcsiprocedure] = useState("");
+    const [pgtTesting, setPgtTesting] = useState("");
 
     const navigate = useNavigate();
 
@@ -24,6 +26,10 @@ const RateCalculator = () => {
         } else {
             setSelectedConditions([...selectedConditions, condition]);
         }
+    };
+
+    const handleProcedureSelection = (stateSetter, value) => {
+        stateSetter(value);
     };
 
     return (
@@ -140,12 +146,42 @@ const RateCalculator = () => {
                                 ICSI Procedure:
                             </div>
                             <div className="flex gap-3 ">
-                                <div className="flex justify-center gap-3 items-center cursor-pointer">
-                                    <img src={radioButton} alt="radio" />
+                                <div
+                                    className="flex justify-center gap-3 items-center cursor-pointer"
+                                    onClick={() =>
+                                        handleProcedureSelection(
+                                            setIcsiprocedure,
+                                            "yes"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={
+                                            icsiProcedure === "yes"
+                                                ? radioButtonFilled
+                                                : radioButton
+                                        }
+                                        alt="radio"
+                                    />
                                     Yes
                                 </div>
-                                <div className="flex justify-center gap-3 items-center cursor-pointer">
-                                    <img src={radioButton} alt="radio" />
+                                <div
+                                    className="flex justify-center gap-3 items-center cursor-pointer"
+                                    onClick={() =>
+                                        handleProcedureSelection(
+                                            setIcsiprocedure,
+                                            "no"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={
+                                            icsiProcedure === "no"
+                                                ? radioButtonFilled
+                                                : radioButton
+                                        }
+                                        alt="radio"
+                                    />
                                     No
                                 </div>
                             </div>
@@ -155,12 +191,42 @@ const RateCalculator = () => {
                                 PGT Testing:
                             </div>
                             <div className="flex gap-3">
-                                <div className="flex justify-center gap-3 items-center cursor-pointer">
-                                    <img src={radioButton} alt="radio" />
+                                <div
+                                    className="flex justify-center gap-3 items-center cursor-pointer"
+                                    onClick={() =>
+                                        handleProcedureSelection(
+                                            setPgtTesting,
+                                            "yes"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={
+                                            pgtTesting === "yes"
+                                                ? radioButtonFilled
+                                                : radioButton
+                                        }
+                                        alt="radio"
+                                    />
                                     Yes
                                 </div>
-                                <div className="flex justify-center gap-3 items-center cursor-pointer">
-                                    <img src={radioButton} alt="radio" />
+                                <div
+                                    className="flex justify-center gap-3 items-center cursor-pointer"
+                                    onClick={() =>
+                                        handleProcedureSelection(
+                                            setPgtTesting,
+                                            "no"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={
+                                            pgtTesting === "no"
+                                                ? radioButtonFilled
+                                                : radioButton
+                                        }
+                                        alt="radio"
+                                    />
                                     No
                                 </div>
                             </div>
